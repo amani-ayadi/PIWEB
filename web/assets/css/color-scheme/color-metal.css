@@ -1,0 +1,568 @@
+/*======================================================================
+
+Project: MODERN Premium Resume Website Template
+Version: 1.0
+Author: A.M.Roomi
+Email: amroomi@gmail.com
+
+----------------------------------------------------------------------
+                    ***** TABLE OF CONTENTS *****
+----------------------------------------------------------------------
+    01. General
+    02. Navigation
+        02.1 Hamburger Icon
+        02.2 Sliding Navigation
+        02.3 Overlay Effect
+    03 Top Navigation Bar
+    04. Banner
+    05. Main Content
+    06. About
+    07. Resume
+    08. Service
+    09. Portfolio
+    10. Reviews
+    11. Contact
+    12. Footer
+
+======================================================================*/
+
+
+/******************************
+    01. General
+******************************/
+
+body {
+    background-color: #403438;
+}
+
+.page-preloader {
+    background: url(../../../images/page-loader.gif) center no-repeat #fff;
+}
+
+::selection {
+    background-color: #6e7f80;
+    color: #222;
+}
+
+::-moz-selection {
+    background-color: #6e7f80;
+    color: #222;
+}
+
+.section-title>.pr-title>h2,
+.section-title>.pr-title>p {
+    color: #6e7f80;
+}
+
+.section-title>.pr-title>h2>span {
+    color: #222;
+}
+
+a,
+a:hover {
+    color: #6e7f80;
+}
+
+.modern-button.banner-button a {
+    border: 2px solid #6e7f80;
+    color: #fff;
+}
+
+.modern-button.banner-button a:hover {
+    background: #fff;
+    color: #222;
+}
+
+
+/******************************
+    02. Navigation
+******************************/
+
+
+/* 02.1 Hamburger Icon */
+
+.pr-nav-trigger span {
+    background-color: #6e7f80;
+}
+
+
+/* 02.2 Sliding Navigation */
+
+.pr-nav-container {
+    background-color: #fff;
+}
+
+.pr-nav-container.is-visible {
+    box-shadow: -4px 0 30px rgba(34, 34, 34, 0.5);
+}
+
+.pr-nav-container h3 {
+    color: #5c4b51;
+}
+
+.pr-close-nav::after,
+.pr-close-nav::before {
+    background-color: #5c4b51;
+}
+
+.pr-nav {
+    background-color: #f2f2f2;
+}
+
+.pr-nav li {
+    border: 1px solid #fff;
+}
+
+.no-touch .pr-nav li a span *,
+.pr-nav li a span * {
+    stroke: #6e7f80;
+}
+
+.no-touch .pr-nav li a:hover span *,
+.pr-nav li.pr-selected a span * {
+    stroke: #fff;
+}
+
+.no-touch .pr-nav li a:hover em,
+.pr-nav li.pr-selected a em {
+    color: #fff;
+}
+
+.no-touch .pr-nav li a:hover,
+.pr-nav li.pr-selected a {
+    background-color: #6e7f80;
+}
+
+.pr-nav em {
+    color: #5c4b51;
+}
+
+
+/* 02.3 Overlay Effect */
+
+.pr-overlay {
+    background-color: rgba(34, 34, 34, 0.5);
+}
+
+
+/******************************
+    03 Top Navigation Bar
+******************************/
+
+.top-navigation {
+    background-color: rgba(34, 34, 34, 0) !important;
+}
+
+.top-navigation.stick {
+    background-color: rgba(34, 34, 34, 0.95) !important;
+}
+
+.top-navigation a.navbar-brand,
+.top-navigation a.navbar-brand:hover,
+.top-navigation a.navbar-brand:active,
+.top-navigation a.navbar-brand:visited {
+    color: #fff !important;
+}
+
+.top-navigation .navbar-nav .nav-item a.nav-link {
+    color: #6e7f80;
+}
+
+.top-navigation .navbar-nav .nav-item a.nav-link:hover,
+.top-navigation .navbar-nav .nav-item a.nav-link.active {
+    color: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+    .top-navigation .navbar-toggler {
+        border-color: #6e7f80;
+    }
+    .top-navigation .navbar-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(245, 182, 90)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+    }
+    .top-navigation .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.85);
+    }
+}
+
+
+/******************************
+    04. Banner
+******************************/
+
+.pr-title {
+    color: #fff;
+}
+
+.pr-title>* {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.pr-title h2 span {
+    color: #6e7f80;
+}
+
+.pr-title p {
+    color: #6e7f80;
+    text-transform: uppercase;
+}
+
+.pr-title .arrow-bounce a {
+    color: #fff;
+}
+
+
+/******************************
+    05. Main Content
+******************************/
+
+main {
+    box-shadow: 0 0 30px #222;
+}
+
+.pr-content {
+    background-color: #fff;
+}
+
+.pr-content p {
+    color: #78626a;
+}
+
+@media only screen and (min-width: 1024px) {
+    .no-js .pr-nav li:nth-of-type(3n) a {
+        border-right-width: 1px solid #6e7f80;
+    }
+}
+
+
+/******************************
+    06. About
+******************************/
+
+.pr-right-info {
+    border-bottom: 1px dashed #6e7f80;
+}
+
+.about .pr-right-info p {
+    color: #828282;
+}
+
+.about h2 {
+    color: #6e7f80;
+}
+
+.skills-circle .circliful .circle {
+    stroke: #6e7f80 !important;
+}
+
+.about .skill-progress .skill-progressbar .progress .progress-bar {
+    background-color: #6e7f80;
+}
+
+.strength .strength-item {
+    color: #fff;
+}
+
+.strength .strength-item .counter-num {
+    color: #6e7f80;
+}
+
+.strength .strength-item .counter-desc {
+    color: #ddd;
+}
+
+
+/******************************
+    07. Resume
+******************************/
+
+.resume h2 {
+    color: #6e7f80;
+}
+
+.timeline:before {
+    background-color: #222;
+}
+
+.timeline-event:hover .timeline-event-icon {
+    background-color: #6e7f80;
+}
+
+.timeline-event:hover .timeline-event-date {
+    -moz-box-shadow: inset 40em 0 0 0 #6e7f80;
+    -webkit-box-shadow: inset 40em 0 0 0 #6e7f80;
+    box-shadow: inset 40em 0 0 0 #6e7f80;
+}
+
+.timeline-event-container h3 {
+    color: #6e7f80;
+}
+
+.timeline-event-container h4 {
+    color: #222;
+}
+
+.timeline-event-container p {
+    color: #222;
+}
+
+.timeline-event-container p.timeline-event-date {
+    color: #fff;
+}
+
+.timeline-event-icon {
+    background-color: #222;
+    outline: 10px solid #fff !important;
+}
+
+.timeline-event-date {
+    color: #fff;
+    background-color: #222;
+    -moz-box-shadow: inset 0 0 0 0em #6e7f80;
+    -webkit-box-shadow: inset 0 0 0 0em #6e7f80;
+    box-shadow: inset 0 0 0 0em #6e7f80;
+}
+
+
+/******************************
+    08. Service
+******************************/
+
+.service .service-row .service-icon {
+    color: #6e7f80;
+}
+
+.talk-to-me h2 {
+    color: #6e7f80;
+}
+
+.talk-to-me p {
+    color: #fff;
+}
+
+
+/******************************
+    09. Portfolio
+******************************/
+
+.portfolio .filter-gallery li a,
+.portfolio .filter-gallery li a:hover {
+    color: #6e7f80;
+}
+
+.portfolio .gallery figure figcaption h1 {
+    color: #6e7f80;
+}
+
+.portfolio .gallery figure figcaption p {
+    color: #fff;
+}
+
+.portfolio .gallery figure figcaption .fa-inverse {
+    color: #827e7e;
+}
+
+[class*=" imghvr-"],
+[class^=imghvr-] {
+    background-color: rgba(34, 34, 34, 0.75);
+    color: #fff;
+}
+
+[class*=" imghvr-"] figcaption,
+[class^=imghvr-] figcaption {
+    background-color: rgba(34, 34, 34, 0.75);
+    color: #fff
+}
+
+[class*=" imghvr-reveal-"]:before,
+[class^=imghvr-reveal-]:before {
+    background-color: rgba(34, 34, 34, 0.75);
+}
+
+[class*=" imghvr-shutter-out-"]:before,
+[class^=imghvr-shutter-out-]:before {
+    background: rgba(34, 34, 34, 0.75);
+}
+
+[class*=" imghvr-shutter-in-"]:after,
+[class*=" imghvr-shutter-in-"]:before,
+[class^=imghvr-shutter-in-]:after,
+[class^=imghvr-shutter-in-]:before {
+    background: rgba(34, 34, 34, 0.75);
+}
+
+
+/******************************
+    10. Reviews
+******************************/
+
+.review .customer-reviews .item h3 {
+    color: #6e7f80;
+}
+
+.review .customer-reviews .owl-dot {
+    background-color: #d3d3d3;
+}
+
+.review .customer-reviews .owl-dot.active {
+    background-color: #6e7f80;
+}
+
+.customer .customers {
+    background-color: #d3d3d3;
+}
+
+
+/******************************
+    11. Contact
+******************************/
+
+.contact {
+    background: #f2f2f2;
+}
+
+.contact .wrap-contact-form {
+    background: #fff;
+}
+
+.contact .wrap-contact-form .contact-form h2 {
+    color: #6e7f80;
+}
+
+.contact .field-label {
+    color: #555;
+    border: 1px solid #e6e6e6;
+    border-bottom: none;
+}
+
+.contact .wrap-field {
+    border: 1px solid #e6e6e6;
+}
+
+.contact .wrap-field-right {
+    border-left: none;
+}
+
+.contact .input-field {
+    color: #666;
+}
+
+.contact .validate-alert::before {
+    background-color: #fff;
+    border: 1px solid #c80000;
+    color: #c80000;
+}
+
+.contact .validate-alert::after {
+    color: #c80000;
+}
+
+.contact .field-animate {
+    border: 1px solid #6e7f80;
+}
+
+.contact input::-webkit-input-placeholder {
+    color: #adadad;
+}
+
+.contact input:-moz-placeholder {
+    color: #adadad;
+}
+
+.contact input::-moz-placeholder {
+    color: #adadad;
+}
+
+.contact input:-ms-input-placeholder {
+    color: #adadad;
+}
+
+.contact textarea::-webkit-input-placeholder {
+    color: #adadad;
+}
+
+.contact textarea:-moz-placeholder {
+    color: #adadad;
+}
+
+.contact textarea::-moz-placeholder {
+    color: #adadad;
+}
+
+.contact textarea:-ms-input-placeholder {
+    color: #adadad;
+}
+
+.contact .contact-button {
+    background: #6e7f80;
+    color: #fff;
+}
+
+.contact .contact-button:hover {
+    background: #222;
+}
+
+.contact .contact-info::before {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.contact .contact-icon {
+    color: #fff;
+}
+
+.contact .contact-label {
+    color: #fff;
+}
+
+.contact .contact-detail {
+    color: #999;
+}
+
+.contact .contact-detail a {
+    color: #6e7f80;
+}
+
+@media (max-width: 576px) {
+    .contact .wrap-field-right {
+        border-left: 1px solid #e6e6e6;
+        border-top: none;
+    }
+}
+
+
+/******************************
+    12. Footer
+******************************/
+
+footer .footer-top {
+    background-color: #222;
+}
+
+footer .footer-top ul.footer-social li a .fa-circle {
+    color: #6e7f80;
+}
+
+footer .footer-top ul.footer-social .fa-inverse {
+    color: #222;
+}
+
+footer .footer-top ul.footer-link li a {
+    color: #fff;
+}
+
+footer .footer-top ul.footer-link li a:hover {
+    color: #6e7f80;
+}
+
+footer .footer-bottom {
+    background-color: #6e7f80;
+}
+
+footer .footer-bottom strong {
+    color: #fff;
+}
+
+footer .footer-bottom .copyright,
+footer .footer-bottom .copyright a {
+    color: #222;
+}

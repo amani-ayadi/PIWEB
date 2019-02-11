@@ -1,0 +1,12 @@
+loisir_homepage:
+    path:     /index
+    defaults: { _controller: LoisirBundle:Default:index }
+hellopage:
+    path:     /hello
+    defaults: { _controller: LoisirBundle:Default:hello }
+notfn:
+    path:     /
+    defaults: { _controller: LoisirBundle:Default:NotFound }
+login:
+    path:     /loginn
+    defaults: { _controller: LoisirBundle:Default:login }

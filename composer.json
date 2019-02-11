@@ -1,0 +1,13 @@
+{
+    "name": "pirateos/project-pidev",
+    "authors": [
+        {
+            "name": "shadowmurderx",
+            "email": "mohamed.derbali@esprit.tn"
+        }
+    ],
+    "require": {
+        "friendsofsymfony/user-bundle": "~2.0",
+        "symfony/templating": "^3.4"
+    }
+}

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+
+
+            #page {
+                padding: 10px 20px;
+                display: table-cell;
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            @font-face {
+                font-family: 'budmojigglish';
+                src: url('{{ asset('fonts/budmo-jigglish/budmo-jigglish.eot') }}');
+                src: url('{{ asset('fonts/budmo-jigglish/budmo-jigglish.eot?#iefix') }}') format('embedded-opentype'),
+                url('{{ asset('fonts/budmo-jigglish/budmo-jigglish.woff2') }}') format('woff2'),
+                url('{{ asset('fonts/budmo-jigglish/budmo-jigglish.woff') }}') format('woff'),
+                url('{{ asset('fonts/budmo-jigglish/budmo-jigglish.ttf') }}') format('truetype'),
+                url('{{ asset('fonts/budmo-jigglish/budmo-jigglish.svg#budmojigglish') }}') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            .light-up-letters {
+                display: inline-block;
+                font-family: 'budmojigglish';
+                font-size: 80px;
+                font-weight: 100;
+                color: #696969;
+                text-shadow: 0 0 5px black, 0 0 10px black, 0 0 85px black, 0 0 85px black, 0 0 85px black;
+            }
+
+            .light-up-letters .fade {
+                -webkit-animation: fade 5s linear infinite;
+                animation: fade 5s linear infinite;
+            }
+
+            .light-up-letters .flicker {
+                -webkit-animation: flicker 6s 1s linear infinite;
+                animation: flicker 6s 1s linear infinite;
+            }
+
+            .light-up-letters .sparkle {
+                -webkit-animation: sparkle 3s 3s linear infinite;
+                animation: sparkle 3s 3s linear infinite;
+            }
+
+            @-webkit-keyframes fade {
+                0%,9%,11%,13%,15%,41%,43%,45% {
+                    text-shadow: 0 0 5px black, 0 0 10px black, 0 0 85px black, 0 0 85px black, 0 0 85px black;
+                    opacity: 1;
+                }
+                10%,12%,14%,42%,44% {
+                    opacity: 0.6;
+                    text-shadow: none;
+                }
+            }
+
+            @keyframes fade {
+                0%,9%,11%,13%,15%,41%,43%,45% {
+                    text-shadow: 0 0 5px black, 0 0 10px black, 0 0 85px black, 0 0 85px black, 0 0 85px black;
+                    opacity: 1;
+                }
+                10%,12%,14%,42%,44% {
+                    opacity: 0.6;
+                    text-shadow: none;
+                }
+            }
+
+            @-webkit-keyframes flicker {
+                51% {
+                    text-shadow: 0 0 5px black, 0 0 10px black, 0 0 85px black, 0 0 85px black, 0 0 85px black;
+                    opacity: 1;
+                }
+                0%,50%,52%,100% {
+                    opacity: 0.6;
+                    text-shadow: none;
+                }
+            }
+
+            @keyframes flicker {
+                51% {
+                    text-shadow: 0 0 5px black, 0 0 10px black, 0 0 85px black, 0 0 85px black, 0 0 85px black;
+                    opacity: 1;
+                }
+                0%,50%,52%,100% {
+                    opacity: 0.6;
+                    text-shadow: none;
+                }
+            }
+
+            @-webkit-keyframes sparkle {
+                0%,9%,11%,13%,15%,41%,43%,45% {
+                    text-shadow: 0 0 5px black, 0 0 10px black, 0 0 85px black, 0 0 85px black, 0 0 85px black;
+                    opacity: 1;
+                }
+                10%,12%,14%,42%,44% {
+                    opacity: 0.6;
+                    text-shadow: none;
+                }
+            }
+
+            @keyframes sparkle {
+                0%,9%,11%,13%,15%,41%,43%,45% {
+                    text-shadow: 0 0 5px black, 0 0 10px black, 0 0 85px black, 0 0 85px black, 0 0 85px black;
+                    opacity: 1;
+                }
+                10%,12%,14%,42%,44% {
+                    opacity: 0.6;
+                    text-shadow: none;
+                }
+            }
+        </style>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>HappyOlds</title>
+
+        <!-- Favicon -->
+        <link rel="icon" href="{{ asset('favicon.ico') }}">
+
+        <!-- CSS Reset -->
+        <link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
+
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+
+        <!-- Online Font -->
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+
+        <!-- Font Awesome Animation -->
+            <link rel="stylesheet" href="{{ asset('plugins/font-awesome-animation/font-awesome-animation.min.css') }}">
+        <!-- Circliful Chart -->
+        <link rel="stylesheet" href="{{ asset('plugins/circliful/css/jquery.circliful.css') }}">
+
+        <!-- Image Hover Effect -->
+        <link rel="stylesheet" href="{{ asset('plugins/image-hover/imagehover.min.css') }}">
+
+        <!-- Magnigfic Popup -->
+        <link rel="stylesheet" href="{{ asset('plugins/magnific-popup/magnific-popup.css') }}">
+
+        <!-- Owl Carousel -->
+        <link rel="stylesheet" href="{{ asset('plugins/owl-carousel/assets/owl.carousel.min.css') }}">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+
+        <!-- Color Scheme CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/css/color-scheme/color-beige.css') }}">
+
+        <!-- Modernizr -->
+        <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block header %}
+            <nav class="navbar fixed-top navbar-expand-md navbar-light bg-light top-navigation">
+                <div class="container">
+                    <a class="navbar-brand" href="#home">Happy Olds</a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="top-navbar">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#home">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about">About</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#service">Services</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#portfolio">Portfolio</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#review">Reviews</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        {% endblock %}
+        {% block content %}
+
+        {% endblock %}
+        {% block footer %}
+            <footer>
+                <!-- Footer Top START -->
+                <div class="footer-top">
+                    <ul class="footer-social">
+                        <li>
+                            <a href="#">
+                                <span class="fa-layers fa-3x">
+                                    <i class="fa fa-circle"></i>
+                                    <i class="fab fa-facebook-f fa-inverse" data-fa-transform="shrink-8"></i>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <span class="fa-layers fa-3x">
+                                    <i class="fa fa-circle"></i>
+                                    <i class="fab fa-pinterest-p fa-inverse" data-fa-transform="shrink-8"></i>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <span class="fa-layers fa-3x">
+                                    <i class="fa fa-circle"></i>
+                                    <i class="fab fa-instagram fa-inverse" data-fa-transform="shrink-8"></i>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <span class="fa-layers fa-3x">
+                                    <i class="fa fa-circle"></i>
+                                    <i class="fab fa-twitter fa-inverse" data-fa-transform="shrink-8"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="footer-link">
+                        <li>
+                            <a href="#home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li>
+                            <a href="#service">Services</a>
+                        </li>
+                        <li>
+                            <a href="#portfolio">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="#review">Reviews</a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Footer Top END -->
+
+                <!-- Footer Bottom START -->
+                <div class="footer-bottom">
+                    <strong>Modern Premium Resume Website Template</strong>
+
+                    <p class="copyright">&copy; 2018 | All Rights Reserved</p>
+                </div>
+                <!-- Footer Bottom END -->
+            </footer>
+            <!-- Footer END -->
+        {% endblock %}
+        {% block javascripts %}<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+
+            <!-- Bootstrap Core JS -->
+            <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+
+            <!-- Popper JS -->
+            <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+
+            <!-- Font Awesome -->
+            <script src="{{ asset('plugins/font-awesome/js/fontawesome-all.min.js') }}"></script>
+
+            <!-- Typed JS -->
+            <script src="{{ asset('plugins/typed-js/typed.min.js') }}"></script>
+
+            <!-- Circliful Chart -->
+            <script src="{{ asset('plugins/circliful/js/jquery.circliful.min.js') }}"></script>
+
+            <!-- Inview Event -->
+            <script src="{{ asset('plugins/inview/jquery.inview.min.js') }}"></script>
+
+            <!-- Count Up -->
+            <script src="{{ asset('plugins/count-up/countUp.min.js') }}"></script>
+
+            <!-- Mixitup Filter -->
+            <script src="{{ asset('plugins/mixitup/mixitup.min.js') }}"></script>
+
+            <!-- Magnigfic Popup -->
+            <script src="{{ asset('plugins/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+
+            <!-- Owl Carousel -->
+            <script src="{{ asset('plugins/owl-carousel/owl.carousel.min.js') }}"></script>
+
+            <!-- Google Map -->
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_wGWMl2iJ-ixWJI525qrGsnxFgkieSro&amp;callback=initMap" async defer></script>
+
+            <!-- Utility Functions -->
+            <script src="{{ asset('assets/js/util.js') }}"></script>
+
+            <!-- Page Specific Inline JS START -->
+            <script>
+                $(function() {
+                    'use strict';
+
+                    // Smooth Scroll Effect
+                    smoothScroll();
+
+                    // Top Navigation Effect
+                    var thisWindow = $(window);
+                    thisWindow.on('scroll', function(event) {
+                        if (thisWindow.scrollTop() > 0) {
+                            $('.top-navigation').addClass('stick');
+                        } else {
+                            $('.top-navigation').removeClass('stick');
+                        }
+                    });
+
+                    // Back to Top
+                    var backToTop = $('.back-to-top');
+                    $(window).scroll(function() {
+                        if ($(window).scrollTop() >= 280) {
+                            backToTop.fadeIn();
+                        } else {
+                            backToTop.fadeOut();
+                        }
+                    });
+                    backToTop.on('click', function(event) {
+                        event.preventDefault();
+
+                        $('html, body').animate({
+                            scrollTop: 0
+                        }, '300');
+                    });
+
+                    // Typing Effect
+                    new Typed('#typed', {
+                        stringsElement: '#typed-strings',
+                        typeSpeed: 30,
+                        backSpeed: 30,
+                        smartBackspace: true,
+                        loop: true,
+                        contentType: 'html',
+                        loopCount: false
+                    });
+
+                    // Animate Skills Progressbar In View
+                    $('.progress-bar').one('inview', function(event, isInView) {
+                        if (isInView) {
+                            var valueMax = $(this).attr('aria-valuemax');
+                            var valueNow = $(this).attr('aria-valuenow');
+                            var valuePercent = (valueNow * 100) / valueMax;
+
+                            $(this).css('width', valuePercent + '%');
+                            $(this).html(valuePercent + '%');
+                        }
+                    });
+
+                    // Animate Skills Circles In View
+                    $('.skills-circle').one('inview', function(event, isInView) {
+                        $(this).circliful({
+                            animationStep: 5,
+                            foregroundBorderWidth: 12,
+                            backgroundBorderWidth: 12,
+                            backgroundColor: '#e9ecef'
+                        });
+                    });
+
+                    // Strength Count Up
+                    $('.strength').one('inview', function(event, isInView) {
+                        var options = {
+                            useEasing: true,
+                            useGrouping: false,
+                            separator: '',
+                            decimal: ''
+                        };
+
+                        new CountUp('counter-project', 0, 353, 0, 2.5, options).start();
+                        new CountUp('counter-client', 0, 121, 0, 2.5, options).start();
+                        new CountUp('counter-experience', 0, 10, 0, 2.5, options).start();
+                        new CountUp('counter-award', 0, 25, 0, 2.5, options).start();
+                    });
+
+                    // Flter Portfolio Gallery
+                    mixitup('.gallery', {
+                        selectors: {
+                            control: '[data-mixitup-control]'
+                        }
+                    });
+
+                    // Portfolio Gallery Popup
+                    $('.portfolio-popup').magnificPopup({
+                        type: 'image',
+                        gallery: {
+                            enabled: true
+                        }
+                    });
+
+                    // Activate Current Element in Filtering Links
+                    $('.filter-gallery').on('click', function(event) {
+                        $('.filter-gallery li').removeClass('active');
+
+                        var target = $(event.target);
+
+                        // Detect Exact Element of the Event (Delegate)
+                        if (target.is('a')) {
+                            target.parent().addClass('active');
+                        }
+                    });
+
+                    // Customer Review Slider
+                    $('.customer-reviews').owlCarousel({
+                        items: 1,
+                        loop: true,
+                        center: true,
+                        dots: true,
+                        autoplay: true
+                    });
+
+                    // Customers Slider
+                    $('.customers').owlCarousel({
+                        items: 4,
+                        loop: true
+                    });
+
+                    // Contact Form Validation and Submission
+                    var contactForm = $('.contact-form');
+                    contactForm.on('submit', function(event) {
+                        submitContact(contactForm);
+
+                        event.preventDefault();
+                    });
+                    $('.contact-form .input-field').on('focus', function() {
+                        hideValidate(this);
+                    });
+                });
+            </script>{% endblock %}
+    </body>
+</html>

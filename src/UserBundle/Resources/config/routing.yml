@@ -1,0 +1,3 @@
+admin:
+    path:     /admin/home
+    defaults: { _controller: UserBundle:Security:redirect }
